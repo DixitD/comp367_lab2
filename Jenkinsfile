@@ -5,11 +5,6 @@ pipeline {
         DOCKERHUB_USERNAME=credentials('Docker_Hub_Username')
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'master', url: 'https://github.com/DixitD/comp367_lab2.git'
-            }
-        }
         stage('Maven Build') {
             steps {
                 withMaven(maven: 'maven3') {
