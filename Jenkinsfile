@@ -10,7 +10,7 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/DixitD/comp367_lab2.git'
             }
         }
-        stage('build') {
+        stage('Maven Build') {
             steps {
                 withMaven(maven: 'maven3') {
                 sh 'mvn clean package'
